@@ -1,25 +1,10 @@
 import angular from 'angular';
 import config from './config';
 
+import registerStateNotFoundHandler from './register-state-not-found-handler';
+
 export default function(ngModule, options){
   angular.merge(config, options);
-  ngModule.run(registerErrorHandler);
+
+  registerStateNotFoundHandler(ngModule, options);
 };
-
-/**
- * Register error handler for ui-router state not found errors
- *
- * This catches situations where the toState is not defined
- */
-function registerErrorHandler($rootScope) {
-
-  $rootScope.$on('$stateNotFound', function (event, unfoundState, fromState, fromParams) {
-
-    // ADD CUSTOM LOGIC HERE
-    // event.preventDefault();
-  });
-
-}
-
-// Inject dependencies;
-registerErrorHandler.$inject = ['$rootScope'];
