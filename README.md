@@ -20,7 +20,7 @@ No clue what the `ngx` command line tool is? Learn more about [AngularJS Express
 
 After installing the component:
 
-- edit `_build/index.js`
+- edit `_build/register-state-not-found-handler.js`
 - add your custom logic
 
 and import the component in your Angular application:
